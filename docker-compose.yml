@@ -1,0 +1,14 @@
+services:
+  php:
+    build: .
+    container_name: api-php
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
